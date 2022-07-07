@@ -1,0 +1,28 @@
+{
+    "Granules":[
+        {
+            "id": 1,
+            "size": 7133,
+            "project": "LIS",
+            "fileName": "lis_img_1.png"
+        },
+        {
+            "id": 2,
+            "size": 8606,
+            "project": "NALMA",
+            "fileName": "nalma_img_1.png"
+        },
+        {
+            "id": 3,
+            "size": 3980,
+            "project": "LIS",
+            "fileName": "lis_img_2.png"
+        },
+        {
+            "id": 4,
+            "size": 5233,
+            "project": "NALMA",
+            "fileName": "nalma_img_2.png"
+        }
+    ]
+}
