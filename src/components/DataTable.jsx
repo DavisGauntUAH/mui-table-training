@@ -12,7 +12,7 @@ const coumns = [
         editable: false
     },
     {
-        field: 'fileName', 
+        field: 'file_name', 
         headerName: 'File Name',
         width: 180,
         editable: false
@@ -25,70 +25,12 @@ const coumns = [
     },
 ]
 
-const row = [
-    {
-        id: 1,
-        size: 7133,
-        project: "LIS",
-        fileName: "lis_img_1.png"
-    },
-    {
-        id: 2,
-        size: 8606,
-        project: "NALMA",
-        fileName: "nalma_img_1.png"
-    },
-    {
-        id: 3,
-        size: 3980,
-        project: "LIS",
-        fileName: "lis_img_2.png"
-    },
-    {
-        id: 4,
-        size: 5233,
-        project: "NALMA",
-        fileName: "nalma_img_2.png"
-    },
-    {
-        id: 5,
-        size: 9346,
-        project: "LIS",
-        fileName: "lis_img_3.png"
-    },
-    {
-        id: 6,
-        size: 6436,
-        project: "NALMA",
-        fileName: "nalma_img_3.png"
-    },
-    {
-        id: 7,
-        size: 7330,
-        project: "LIS",
-        fileName: "lis_img_4.png"
-    },
-    {
-        id: 8,
-        size: 6011,
-        project: "NALMA",
-        fileName: "nalma_img_4.png"
-    },
-    {
-        id: 9,
-        size: 8429,
-        project: "LIS",
-        fileName: "lis_img_5.png"
-    }
-
-]
-
-const DataTable = () => {
+const DataTable = ({ rows }) => {
   return (
     <Container style={{marginTop: '100px'}}>
         <Box sx={{ height: 400, width: '65%'}} margin='auto'>
             <DataGrid
-                rows={row}
+                rows={rows}
                 columns={coumns}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
