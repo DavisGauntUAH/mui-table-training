@@ -4,7 +4,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 
 const coumns = [
-    {field: 'id', headerName: 'ID', width: 90},
+    {field: 'id', headerName: 'ID', width: 60},
     {
         field: 'project', 
         headerName: 'Project',
@@ -20,7 +20,7 @@ const coumns = [
     {
         field: 'size', 
         headerName: 'Size (MB)',
-        width: 100,
+        width: 110,
         editable: false
     },
 ]
@@ -86,7 +86,7 @@ const row = [
 const DataTable = () => {
   return (
     <Container style={{marginTop: '100px'}}>
-        <Box sx={{ height: 400, width: '70%'}} margin='auto'>
+        <Box sx={{ height: 400, width: '65%'}} margin='auto'>
             <DataGrid
                 rows={row}
                 columns={coumns}
