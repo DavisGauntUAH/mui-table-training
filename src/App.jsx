@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { CssBaseline } from '@mui/material'
+import { Box, CssBaseline, TextField } from '@mui/material'
 import TopBar from './components/TopBar'
 import DataTable from './components/DataTable'
 import raw from './sample.xml'
@@ -36,6 +36,8 @@ function xml2json(xml) {
 
 const App = () => {
     const [rows, setRows] = useState([])
+    const [search, setSearch] = useState('')
+    const [filteredRow, setFilteredRow] = useState([])
 
     useEffect(() => {
         const getRows = async () => {
@@ -44,6 +46,14 @@ const App = () => {
         }
         getRows()
     }, [])
+
+    const filterRow = (text) => {
+      const hold = []
+      rows.forEach((row) => {if (row.project.includes(text.toUpperCase())) {
+        hold.push(row)
+      }})
+      setFilteredRow(hold)
+    }
 
     const fetchRow = async () => {
         const res = await fetch(raw)
@@ -54,12 +64,31 @@ const App = () => {
         return(json['granules']['granule'])      
     }
 
+    const handleSearch = (text) => {
+      setSearch(text)
+      if (text.length >= 3) {
+        filterRow(text)
+      }
+    }
+
     return(
         <div>
             <CssBaseline />
             <TopBar />
+            <Box sx={{ width: '65%', p:1}} 
+              display='flex' 
+              justifyContent='right'
+              margin = 'auto'
+              >
+                <TextField
+                  variant='outlined'
+                  id='searchField'
+                  label= 'Search'
+                  value={search} onChange={(event) => handleSearch(event.target.value)}
+                />
+            </Box>
             <main>
-                <DataTable rows={rows}/>
+                <DataTable rows={search.length <= 2 ? rows : filteredRow}/>
             </main>
         </div>
     )

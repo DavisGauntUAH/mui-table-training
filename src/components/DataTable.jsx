@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from '@mui/system';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 
@@ -27,17 +26,15 @@ const coumns = [
 
 const DataTable = ({ rows }) => {
   return (
-    <Container style={{marginTop: '100px'}}>
-        <Box sx={{ height: 400, width: '65%'}} margin='auto'>
-            <DataGrid
-                rows={rows}
-                columns={coumns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                
-            />
-        </Box>
-    </Container>
+    <Box sx={{ height: 400, width: '65%'}} margin='auto'>
+        <DataGrid
+            rows={rows}
+            columns={coumns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            
+        />
+    </Box>
   )
 }
 
