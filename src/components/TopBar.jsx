@@ -4,7 +4,7 @@ import TableRowsIcon from '@mui/icons-material/TableRows';
 
 const TopBar = () => {
   return (
-    <AppBar position='relative'>
+    <AppBar position='relative' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <Toolbar>
                 <TableRowsIcon/>
                 <Typography variant='h6'>
